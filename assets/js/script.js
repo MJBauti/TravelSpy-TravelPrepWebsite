@@ -43,5 +43,17 @@ fetch('https://hotels-com-provider.p.rapidapi.com/v1/hotels/search?checkin_date=
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
 
-    var openWeatherApiKey = '4ea10124c88fca503d3a1712192729fd';
-    var openWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
+var hotelApiKey = '069917c6d4msh28e5523d08eaa97p1412bdjsn5f7635020738';
+var hotelUrl = 'https://hotels-com-provider.p.rapidapi.com/v1/hotels/search?'
+
+function getHotels(cityFormEl) 
+    var apiUrl = hotelUrl + cityFormEl + '&appid=' + hotelApiKey;
+    fetch(apiUrl)
+        .then(function (apiResponse) {
+            if (apiResponse.ok) {
+                apiResponse.json().then(function (data) {
+                    var cityChoice = data.cityFormEl.destination
+                    var apiCallUrl =  hotelUrl + cityChoice + '&destination=' + hotelApiKey;
+                })
+            }
+        })
