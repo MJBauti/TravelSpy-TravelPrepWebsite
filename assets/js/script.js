@@ -42,3 +42,6 @@ fetch('https://hotels-com-provider.p.rapidapi.com/v1/hotels/search?checkin_date=
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
+
+    var openWeatherApiKey = '4ea10124c88fca503d3a1712192729fd';
+    var openWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
