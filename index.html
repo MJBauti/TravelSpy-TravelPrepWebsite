@@ -5,51 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Spy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
+    rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/stylesheet.css" />
 </head>
 
 <body>
     <main>
         <div>
-            <h1>TRAVEL SPY</h1>
-            <img src="https://via.placeholder.com/150" alt="Travel Spy Toon">
+            <h1 class="header">TRAVEL SPY</h1>
+            <img href="https://s.cafebazaar.ir/images/icons/com.example.spy_party_game_512x512.webp" alt="Travel Spy Toon">
         </div>
         <div>
-            <form>
-                <input type="text" placeholder="City, Country">
+            <form id="city-form">
+                <input id="city-input" class="form-input" type="text" placeholder="Rome, Italy">
+                <button class="btn" id="btnGo">Let's Go</button>
             </form>
         </div>
-        <div>
-            <input type="checkbox" checked="true">
+        <div class="checkBox">
+            <input id="time" type="checkbox" checked="true">
             <label>Local Time</label>
         </div>
-        <div>
-            <input type="checkbox" checked="true">
+        <div class="checkBox">
+            <input id="currency" type="checkbox" checked="true">
             <label>Currency</label>
         </div>
-        <div>
-            <input type="checkbox" checked="true">
+        <div class="checkBox">
+            <input id="weather" type="checkbox" checked="true">
             <label>Weather</label>
         </div>
-        <div>
-            <input type="checkbox">
+        <div class="checkBox">
+            <input id="health" type="checkbox">
             <label>Health/Vaccination Info</label>
         </div>
-        <div>
-            <input type="checkbox">
+        <div class="checkBox">
+            <input id="places" type="checkbox">
             <label>Places to Stay</label>
         </div>
-        <div>
-            <input type="checkbox">
+        <div class="checkBox">
+            <input id="getAround" type="checkbox">
             <label>Get Around (Travel)</label>
         </div>
-        <div>
-            <input type="checkbox">
+        <div class="checkBox">
+            <input id="ent" type="checkbox">
             <label>Entertainment</label>
         </div>        
-        <div>
-            <input type="checkbox">
+        <div class="checkBox">
+            <input id="sight" type="checkbox">
             <label>Sightseeing</label>
         </div>
+    
+            
+
     </main>
+
+    <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
