@@ -1,7 +1,7 @@
-// function to choose which info pulling
-
-// function to change page
 var cityFormEl = document.querySelector('#city-form');
+var currency;
+var countryCode2;
+var timezone;
 
 function handleCityFormSubmit(event) {
     event.preventDefault();
@@ -22,10 +22,86 @@ function handleCityFormSubmit(event) {
 
 cityFormEl.addEventListener('submit', handleCityFormSubmit);
 
-// function to fill city, country basic info on left of results page
+var getFranceInfo = function() {
+    fetch (`https://restcountries.com/v3.1/name/france`, {
+        cache: `reload`,
+    })
+    .then(response => {return response.json();})
+    .then(data => {
+        currency = ([0].currencies.EUR.name);
+        countryCode2 = (data[0].cca2);
+        timezone = (data[0].timezones[0]);
+    })
+}
 
-// function to pull up info on right side
-    // refer to function that decided info
-    // call to each function for specific info
+var getChinaInfo = function() {
+    fetch (`https://restcountries.com/v3.1/name/china`, {
+        cache: `reload`,
+    })
+    .then(response => {return response.json();})
+    .then(data => {
+        currency = ([2].currencies.CNY.name);
+        countryCode2 = (data[2].cca2);
+        timezone = (data[2].timezones[0]);
+    })
+}
 
-// each function to call specific info
+var getUnitedKingdomInfo = function() {
+    fetch (`https://restcountries.com/v3.1/name/gb`, {
+        cache: `reload`,
+    })
+    .then(response => {return response.json();})
+    .then(data => {
+        currency = (data[0].currencies.GBP.name);
+        countryCode2 = (data[0].cca2);
+        timezone = (data[0].timezones[0]);
+    })
+}
+
+var getJapanInfo = function() {
+    fetch (`https://restcountries.com/v3.1/name/japan`, {
+        cache: `reload`,
+    })
+    .then(response => {return response.json();})
+    .then(data => {
+        currency = (data[0].currencies.JPY.name);
+        countryCode2 = (data[0].cca2);
+        timezone = (data[0].timezones[0]);
+    })
+}
+
+var getUSAInfo = function() {
+    fetch (`https://restcountries.com/v3.1/name/usa`, {
+        cache: `reload`,
+    })
+    .then(response => {return response.json();})
+    .then(data => {
+        currency = (data[0].currencies.USD.name);
+        countryCode2 = (data[0].cca2);
+        timezone = (data[0].timezones[0]);
+    })
+}
+
+var getThailandInfo = function() {
+    fetch (`https://restcountries.com/v3.1/name/thailand`, {
+        cache: `reload`,
+    })
+    .then(response => {return response.json();})
+    .then(data => {
+        currency = (data[0].currencies.THB.name);
+        countryCode2 = (data[0].cca2);
+        timezone = (data[0].timezones[0]);
+    })
+}
+
+var getCountryInfo = function() {
+    fetch (`https://restcountries.com/v3.1/name/korea`, {
+        cache: `reload`,
+    })
+    .then(response => {return response.json();})
+    .then(data => {
+        currency = (data[1].currencies.KRW.name);
+        countryCode2 = (data[1].cca2);
+        timezone = (data[1].timezones[0]);
+    })
+}
