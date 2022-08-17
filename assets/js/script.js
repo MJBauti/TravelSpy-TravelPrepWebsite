@@ -29,4 +29,3 @@ cityFormEl.addEventListener('submit', handleCityFormSubmit);
     // call to each function for specific info
 
 // each function to call specific info
-
