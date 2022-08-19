@@ -5,69 +5,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results | Travel Spy</title>
+    <link rel="stylesheet" href="./assets/css/stylesheet.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-    <body>
-        <div>
-            <h1>Travel Spy</h1>
-            <image></image>
-        </div>
-        <div>
-            <h2>Your Next Vacation!</h2>
-            <a href="./index.html" class="btn">← Go Back</a>
-        </div>
-        <br>
-        <div class="results-col">
-            <h2>Showing Results For " 
-                <span id="result-text"></span>
-            </h2>
-            <img src="" id="flag"/>
-        </div>
-            <aside id="result-content" class="results-body">
-                <div class="card">
-                    <h3>Weather: New inteligence from our agents suspect that the weather in 
+    <body class="flex, pt-4, text-center">
+    <div  
+        class="w-full h-screen bg-no-repeat bg-cover bg-fixed scale-100"
+        style="background-image: url('https://cdn.pixabay.com/photo/2013/06/20/13/52/world-140304_960_720.jpg');">
+        <main>
+
+            <div class="bg-gradient-to-r from-cyan-600 to-blue-600 text-white text-9xl pb-8 font-bold">
+                <h1 class="header">Travel Spy</h1>
+            </div>
+
+            <div class="text-white text-left ml-5 mt-5 text-4xl flex-initial w-64">
+                <h2 class="mb-8">Your Next Vacation!</h2>
+                <button href="./index.html" class="btn text-xl bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">← Go Back</button>
+            </div>
+
+            <div>
+                <div class="max-w-3xl w-full h-96 ml-5 mt-8 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 text-white ">
+                    <div class="float-left scale-100" href='https://countryflagsapi.com/png/${country}'></div>
+                    <div class="px-6 font-medium text-gray-500 dark:text-gray-400 py-4">
+                        <div class="font-bold text-xl mt-5 text-center p-3">Mission Details</div>
+                        <p class="text-base text-center">ohhhhhhh myyyyy Goooooooooood we dont have enough time</p>
+                    </div>
+                    <div class="px-6 pt-4 pb-2">
+                        <span class="inline-block bg-gradient-to-r from-cyan-600 to-blue-600 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">placeholder</span>
+                        <span class="inline-block bg-gradient-to-r from-cyan-600 to-blue-600 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">placeholder</span>
+                        <span class="inline-block bg-gradient-to-r from-cyan-600 to-blue-600 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">kill me now pls</span>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="m-8 space-x-6 justify-evenly text-white " class="results-col">
+                <h2 class="text-white text-5xl">Showing Results For : 
+                    <span id="result-text"></span>
+                </h2>
+                <img class="float scale-100" src="" id="flag"/>
+            </div>
+        
+            <div id="result-content" class="results-body text-xl">
+                <div class="card" class="text-white">
+                    <h3 class="text-white">Weather: New inteligence from our agents suspect that the weather in 
                         <span id="result-text"></span> is looking like:</h3>
                         <br>
-                    <p></p>
+                    <p class="text-white"></p>
                 </div>
                 <div class="card">
-                    <h3>Currency: Our agents suggest you convert your currency to <span id="result-text"></span> currency </h3>
+                    <h3 class="text-white">Currency: Our agents suggest you convert your currency to <span id="result-text"></span> currency </h3>
                         <br>
-                    <p></p>
+                    <p id="sights" class="text-white"></p>
                 </div>
                 <div class="card">
-                    <h3>Hotels: Our spies have found some safe houses for you to stay in</h3>
+                    <h3 class="text-white">Hotels: Our spies have found some safe houses for you to stay in</h3>
                         <br>
-                        <p></p>
+                        <p id="sights" class="text-white"></p>
                 </div>
                 <div class="card">
-                    <h3>Time: Our agents have reported that the local time in that area is: </h3>
+                    <h3 class="text-white">Time: Our agents have reported that the local time in that area is: </h3>
                     <br>
-                    <p></p>
+                    <p id="sights" class="text-white"></p>
                 </div>
                 <div class="card">
-                    <h3>Health: We can't have one of our own get sick. Our team suggests you look into this health information: </h3>
+                    <h3 class="text-white">Health: We can't have one of our own get sick. Our team suggests you look into this health information: </h3>
                     <br>
-                    <p></p>
+                    <p id="sights" class="text-white"></p>
                 </div>
                 <div class="card">
-                    <h3>Transportation: Travel with caution! Here are some ways to get around town: </h3>
+                    <h3 class="text-white">Transportation: Travel with caution! Here are some ways to get around town: </h3>
                     <br>
-                    <p></p>
+                    <p id="sights" class="text-white"></p>
                 </div>
                 <div class="card">
-                    <h3>Entertainment: Enjoy your mission! Here are some things to do: </h3>
+                    <h3 class="text-white">Entertainment: Enjoy your mission! Here are some things to do: </h3>
                     <br>
-                    <p></p>
+                    <p id="sights" class="text-white"></p>
                 </div>
                 <div class="card">
-                    <h3>Sightseeing: Make sure you checkout these points of interest: </h3>
+                    <h3 class="text-white">Sightseeing: Make sure you checkout these points of interest: </h3>
                     <br>
+                    <p id="sights" class="text-white"></p>
                     <p id="sights"> sights go here </p>
                 </div>
-            </aside>
-            <script src="./assets/js/results.js"></script>
+            </div>
+        </main>          
+    </div>
+        <script src="./assets/js/results.js"></script>
     </body>
 
-</html>
+    <footer class="h-20 text-2xl text-black text-center bg-gradient-to-r from-cyan-500 to-blue-500">Made with❤️and Tailwindcss
+        <h2>Created By: Michael, Gassan, & Andrew</h2>
+    </footer>
 
+</html>
