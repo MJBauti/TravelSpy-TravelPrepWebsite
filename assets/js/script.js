@@ -13,48 +13,42 @@ var queryString;
 
 
 function chooseParis(event) {
-    var cityInputVal = "Paris, France";
+    var cityInputVal = "Paris";
     queryString = './results.html?q=' + cityInputVal;
     getFranceInfo();
 }
 
 function chooseLondon(event) {
-    var cityInputVal = "London, United Kingdom";
+    var cityInputVal = "London";
     queryString = './results.html?q=' + cityInputVal;
     getUnitedKingdomInfo();
 }
 
 function chooseTokyo(event) {
-    var cityInputVal = "Tokyo, Japan";
+    var cityInputVal = "Tokyo";
     queryString = './results.html?q=' + cityInputVal;
     getJapanInfo();
 }
 
 function chooseNewYork(event) {
-    var cityInputVal = "New York, USA";
+    var cityInputVal = "New York";
     queryString = './results.html?q=' + cityInputVal;
     getUSAInfo();
 }
 
 function chooseBangkok(event) {
-    var cityInputVal = "Bangkok, Thailand";
+    var cityInputVal = "Bangkok";
     queryString = './results.html?q=' + cityInputVal;
     getThailandInfo();
 }
 
 function chooseSeoul(event) {
-    var cityInputVal = "Seoul, South Korea";
+    var cityInputVal = "Seoul";
     queryString = './results.html?q=' + cityInputVal;
     getKoreaInfo();
 }
 
 function deploySpy(event) {
-    if (!cityInputVal) {
-        console.error('You need a city input value!');
-        return;
-        // modal.style.display = "block";
-        // span.onclick = function() {modal.style.display = "none";}
-    }
     location.assign(queryString);
 }
 
@@ -79,18 +73,6 @@ var getFranceInfo = function() {
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
         latlong = "lat=48.8566&long=2.3522";
-    })
-}
-
-var getChinaInfo = function() {
-    fetch (`https://restcountries.com/v3.1/name/china`, {
-        cache: `reload`,
-    })
-    .then(response => {return response.json();})
-    .then(data => {
-        currency = ([2].currencies.CNY.name);
-        countryCode2 = (data[2].cca2);
-        timezone = (data[2].timezones[0]);
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);

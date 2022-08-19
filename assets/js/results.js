@@ -1,4 +1,5 @@
 var country = localStorage.getItem("country");
+var backBtn = document.querySelector('#back-btn');
 var city
 
 function getParams() {
@@ -21,6 +22,11 @@ function getFlag (country) {
     })
 }
 
+function goBack(event) {
+    location.assign('./index.html');
+}
+
+backBtn.addEventListener('click', goBack);
 
 var hotelsUrl = 'https://hotels4.p.rapidapi.com/locations/v2/search?query=';
 var hotelKey = '069917c6d4msh28e5523d08eaa97p1412bdjsn5f7635020738';
