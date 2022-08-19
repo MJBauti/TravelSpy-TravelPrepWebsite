@@ -78,6 +78,19 @@ var getFranceInfo = function() {
         currency = (data[0].currencies.EUR.name);
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
+        latlong = "lat=48.8566&long=2.3522";
+    })
+}
+
+var getChinaInfo = function() {
+    fetch (`https://restcountries.com/v3.1/name/china`, {
+        cache: `reload`,
+    })
+    .then(response => {return response.json();})
+    .then(data => {
+        currency = ([2].currencies.CNY.name);
+        countryCode2 = (data[2].cca2);
+        timezone = (data[2].timezones[0]);
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
@@ -94,6 +107,7 @@ var getUnitedKingdomInfo = function() {
         currency = (data[0].currencies.GBP.name);
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
+        latlong = "lat=51.5072&long=0.1276";
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
@@ -110,6 +124,7 @@ var getJapanInfo = function() {
         currency = (data[0].currencies.JPY.name);
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
+        latlong = "lat=35.6762&long=139.6503";
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
@@ -126,6 +141,7 @@ var getUSAInfo = function() {
         currency = (data[0].currencies.USD.name);
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
+        latlong = "lat=40.7128&long=-74.0060";
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
@@ -142,6 +158,7 @@ var getThailandInfo = function() {
         currency = (data[0].currencies.THB.name);
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
+        latlong = "lat=13.7563&long=100.5018";
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
@@ -158,6 +175,7 @@ var getKoreaInfo = function() {
         currency = (data[1].currencies.KRW.name);
         countryCode2 = (data[1].cca2);
         timezone = (data[1].timezones[0]);
+        latlong = "lat=37.5665&long=126.9780";
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
