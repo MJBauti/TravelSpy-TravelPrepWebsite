@@ -28,7 +28,6 @@ function getFlag (country) {
 
 
 
-console.log(options)
 
 var hotelsUrl = 'https://hotels4.p.rapidapi.com/locations/v2/search?query=';
 var hotelKey = '069917c6d4msh28e5523d08eaa97p1412bdjsn5f7635020738';
@@ -110,8 +109,6 @@ function findHotels() {
 
 
 function flights() {
-    // var flightHeader = new Headers();
-    // flightHeader.append("apikey", "069917c6d4msh28e5523d08eaa97p1412bdjsn5f7635020738");
     
     var requestFlights = {
         method: 'GET',
