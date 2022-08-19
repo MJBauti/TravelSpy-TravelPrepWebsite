@@ -11,72 +11,84 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <main>
-        <div>
-            <h1 class="header">TRAVEL SPY</h1>
-            <img href="https://s.cafebazaar.ir/images/icons/com.example.spy_party_game_512x512.webp" alt="Travel Spy Toon">
-        </div>
-    <!-- Button -->
-    <button id= "paris-france" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Paris, France
-    </button>
-    <button id= "london-unitedkingdom" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        London, United Kingdom
-    </button>
-    <button id= "tokyo-japan" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Tokyo, Japan
-    </button>
-    <button id= "newyork-usa" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-       New York, USA
-    </button>
-    <button id= "bangkok-thailand" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Bangkok, Thailand
-    </button>
-    <button id= "seoul-southkorea" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        Seoul, South Korea
-    </button>
-
-    </div>
-        <div class="checkBox">
-            <input id="time" type="checkbox" checked="true">
-            <label class="text-2xl">Local Time</label>
-        </div>
-        <div class="checkBox">
-            <input id="currency" type="checkbox" checked="true">
-            <label">Currency</label>
-        </div>
-        <div class="checkBox">
-            <input id="weather" type="checkbox" checked="true">
-            <label>Weather</label>
-        </div>
-        <div class="checkBox">
-            <input id="health" type="checkbox">
-            <label>Health/Vaccination Info</label>
-        </div>
-        <div class="checkBox">
-            <input id="places" type="checkbox">
-            <label>Places to Stay</label>
-        </div>
-        <div class="checkBox">
-            <input id="getAround" type="checkbox">
-            <label>Get Around (Travel)</label>
-        </div>
-        <div class="checkBox">
-            <input id="ent" type="checkbox">
-            <label>Entertainment</label>
-        </div>        
-        <div class="checkBox">
-            <input id="sight" type="checkbox">
-            <label>Sightseeing</label>
-        </div>
-        
+<body class="flex, pt-4, text-center">
+    <div  
+        class="w-full h-screen bg-no-repeat bg-cover bg-fixed scale-100"
+        style="background-image: url('https://cdn.pixabay.com/photo/2013/06/20/13/52/world-140304_960_720.jpg');">
     
-            
+        <main>
+            <div class="bg-gradient-to-r from-cyan-600 to-blue-600 text-white text-9xl font-bold">
+                <h1 class="header">TRAVEL SPY</h1>
+                
+            </div>
 
-    </main>
+        <!-- Button -->
+        <div class="m-8 space-x-6 text-3xl justify-evenly">
+            <button id= "paris-france" class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Paris, France
+            </button>
+            <button id= "london-unitedkingdom" class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                London, United Kingdom
+            </button>
+            <button id= "tokyo-japan" class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Tokyo, Japan
+            </button>
+            <button id= "newyork-usa" class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                New York, USA
+            </button>
+            <button id= "bangkok-thailand" class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Bangkok, Thailand
+            </button>
+            <button id= "seoul-southkorea" class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Seoul, South Korea
+            </button>
+        </div>
 
-    <script src="./assets/js/displayresults.js"></script>
+        <div class="text-white m-10 text-3xl space-y-7 ">
+            <div class="checkBox">
+                <input id="time" type="checkbox" class="h-5 w-5 rounded-md border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 transition duration-200 mt-1 mr-2 cursor-pointer">
+                <label>Local Time</label>
+            </div>
+            <div class="checkBox">
+                <input id="currency" type="checkbox" class="h-5 w-5 rounded-md border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 transition duration-200 mt-1 mr-2 cursor-pointer">
+                <label">Currency</label>
+            </div>
+            <div class="checkBox">
+                <input id="weather" type="checkbox" class="h-5 w-5 rounded-md border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 transition duration-200 mt-1 mr-2 cursor-pointer">
+                <label>Weather</label>
+            </div>
+            <div class="checkBox">
+                <input id="health" type="checkbox" class="h-5 w-5 rounded-md border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 transition duration-200 mt-1 mr-2 cursor-pointer">
+                <label>Health/Vaccination Info</label>
+            </div>
+            <div class="checkBox">
+                <input id="places" type="checkbox" class="h-5 w-5 rounded-md border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 transition duration-200 mt-1 mr-2 cursor-pointer">
+                <label>Places to Stay</label>
+            </div>
+            <div class="checkBox">
+                <input id="getAround" type="checkbox" class="h-5 w-5 rounded-md border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 transition duration-200 mt-1 mr-2 cursor-pointer">
+                <label>Get Around (Travel)</label>
+            </div>
+            <div class="checkBox">
+                <input id="ent" type="checkbox" class="h-5 w-5 rounded-md border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 transition duration-200 mt-1 mr-2 cursor-pointer">
+                <label>Entertainment</label>
+            </div>        
+            <div class="checkBox">
+                <input id="sight" type="checkbox" class="h-5 w-5 rounded-md border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 transition duration-200 mt-1 mr-2 cursor-pointer">
+                <label>Sightseeing</label>
+                
+            </div>
+            <img class="float-left scale-100" src="https://cdn.pixabay.com/photo/2016/03/31/19/12/agent-1294795_960_720.png">
+        </div>
+        </main>
+
+        <script src="./assets/js/script.js"></script>
+        
+    </div>
 </body>
+
+<footer class="h-20 text-2xl text-black text-center bg-gradient-to-r from-cyan-500 to-blue-500">Made with❤️and Tailwindcss
+    <h2>Created By: Michael, Gassan, & Andrew</h2>
+</footer>
 
 </html>

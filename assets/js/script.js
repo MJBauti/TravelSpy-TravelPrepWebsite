@@ -31,6 +31,7 @@ var getFranceInfo = function() {
         currency = ([0].currencies.EUR.name);
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
+        latlong = "lat=48.8566&long=2.3522";
     })
 }
 
@@ -55,6 +56,7 @@ var getUnitedKingdomInfo = function() {
         currency = (data[0].currencies.GBP.name);
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
+        latlong = "lat=51.5072&long=0.1276";
     })
 }
 
@@ -67,6 +69,7 @@ var getJapanInfo = function() {
         currency = (data[0].currencies.JPY.name);
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
+        latlong = "lat=35.6762&long=139.6503";
     })
 }
 
@@ -79,6 +82,7 @@ var getUSAInfo = function() {
         currency = (data[0].currencies.USD.name);
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
+        latlong = "lat=40.7128&long=-74.0060";
     })
 }
 
@@ -91,6 +95,7 @@ var getThailandInfo = function() {
         currency = (data[0].currencies.THB.name);
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
+        latlong = "lat=13.7563&long=100.5018";
     })
 }
 
@@ -103,5 +108,6 @@ var getCountryInfo = function() {
         currency = (data[1].currencies.KRW.name);
         countryCode2 = (data[1].cca2);
         timezone = (data[1].timezones[0]);
+        latlong = "lat=37.5665&long=126.9780";
     })
 }
