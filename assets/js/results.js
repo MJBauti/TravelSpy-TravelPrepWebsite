@@ -26,32 +26,16 @@ function getFlag (country) {
     })
 }
 
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '069917c6d4msh28e5523d08eaa97p1412bdjsn5f7635020738',
-		'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'
-	}
-};
 
-fetch(`https://hotels4.p.rapidapi.com/locations/v2/search?query=${city}/${country}`, options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
 
 console.log(options)
 
 var hotelsUrl = 'https://hotels4.p.rapidapi.com/locations/v2/search?query=';
 var hotelKey = '069917c6d4msh28e5523d08eaa97p1412bdjsn5f7635020738';
-// function renderCurrentHotels(destination, travelers, startDate, endDate ) {
-//     var traveler = travelers.adults;
-//     var location = destination.goingTo;
-//     var start = startDate.checkIn.format('MM/DD/YYYY');
-//     var end = endDate.checkOut.format('MM/DD/YYYY');
-// }
+
 
 function getHotels(city, country) {
-    var apiUrl = hotelsUrl + (city, country) + '&appid=' + hotelKey;
+    var apiUrl = hotelsUrl + (city) + '&appid=' + hotelKey;
     fetch(apiUrl)
         .then(function (apiResponse){
             if (apiResponse.ok) {
@@ -67,6 +51,7 @@ function getHotels(city, country) {
                                     .attr({
                                         id: 'available-hotels'
                                     })
+                                var hotelCard = hotelData.available.hotels
                                 var availableHotelsHeading = $('<h2>')
                                     .text(city + country);
                                 var availableHotelsList = $('<ul>')
@@ -97,7 +82,7 @@ function getHotels(city, country) {
                         })
                 })
             } else {
-                alert('Error: go fuck yourself')
+                alert('Error: City not found')
             }
         })
 
@@ -105,6 +90,43 @@ function getHotels(city, country) {
             alert('Unable to connect to Hotels');
         });
 }
+
+function findHotels() {
+    var requestHotels = {
+        method:'GET',
+        redirect: 'follow',
+        headers: {
+            'X-RapidAPI-Key': '069917c6d4msh28e5523d08eaa97p1412bdjsn5f7635020738',
+            'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'
+        }
+
+    }
+
+    fetch(`https://hotels4.p.rapidapi.com/locations/v2/search?query=lat=33.44&lon=33.44`, requestHotels)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
+};
+
+
+function flights() {
+    // var flightHeader = new Headers();
+    // flightHeader.append("apikey", "069917c6d4msh28e5523d08eaa97p1412bdjsn5f7635020738");
+    
+    var requestFlights = {
+        method: 'GET',
+        redirect: 'follow',
+        headers: {
+            'X-RapidAPI-Key': '069917c6d4msh28e5523d08eaa97p1412bdjsn5f7635020738',
+            'X-RapidAPI-Host': 'priceline-com-provider.p.rapidapi.com'}
+    }
+
+    fetch(`https://priceline-com-provider.p.rapidapi.com/v1/hotels/search?sort_order=HDR&location_id=3000035821&date_checkout=2022-11-16&date_checkin=2022-11-15&star_rating_ids=3.0%2C3.5%2C4.0%2C4.5%2C5.0&rooms_number=1&amenities_ids=FINTRNT%2CFBRKFST`, requestFlights)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(error => console.error('error', error));
+}
+
 
 
 // Currency Exchange API fetch. Returns data in JSON format
