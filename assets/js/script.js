@@ -76,6 +76,7 @@ var getFranceInfo = function() {
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
+        localStorage.setItem("latlong", latlong);
     })
 }
 
@@ -93,6 +94,7 @@ var getUnitedKingdomInfo = function() {
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
+        localStorage.setItem("latlong", latlong);
     })
 }
 
@@ -110,6 +112,7 @@ var getJapanInfo = function() {
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
+        localStorage.setItem("latlong", latlong);
     })
 }
 
@@ -127,6 +130,7 @@ var getUSAInfo = function() {
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
+        localStorage.setItem("latlong", latlong);
     })
 }
 
@@ -144,6 +148,7 @@ var getThailandInfo = function() {
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
+        localStorage.setItem("latlong", latlong);
     })
 }
 
@@ -161,6 +166,7 @@ var getKoreaInfo = function() {
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
+        localStorage.setItem("latlong", latlong);
     })
 }
 
