@@ -1,5 +1,4 @@
-var country 
-
+var country
 var city
 
 function getParams() {
@@ -25,8 +24,6 @@ function getFlag (country) {
         document.getElementById('flag').src = URL.createObjectURL(blob)
     })
 }
-
-
 
 
 var hotelsUrl = 'https://hotels4.p.rapidapi.com/locations/v2/search?query=';
@@ -137,15 +134,37 @@ function currencyExchange() {
       headers: myHeaders
     };
     // Need a function to change the "EUR" in the url to corresponding country
-    fetch(`https://api.apilayer.com/exchangerates_data/convert?to=eur&from=usd&amount=1`, requestOptions)
+    fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${currency}&from=usd&amount=1`, requestOptions)
       .then(response => response.json())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
 }
   
 // Timezone API with query parameter
-// Function to add Country and City to the end of the URL Query Parameter
-fetch(`https://api.ipgeolocation.io/timezone?apiKey=a21635ac9e344810af39538fb33ac767&tz=America/Los_Angeles`)
+Function to add Country and City to the end of the URL Query Parameter
+function timezoneCountry {
+fetch(`https://api.ipgeolocation.io/timezone?apiKey=a21635ac9e344810af39538fb33ac767&${latlong}`)
   .then(response => response.json())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
+}
+
+// Famous Sightseeing places
+
+function sightseeing() {
+    if (country === "FR") {
+        document.getElementById('sights').innerHTML = 'Eiffel Tower, Musée du Louvre, Musee de l Orangerie, Notre Dame Cathedral, Le Marais';
+    } else if (country === "GB") {
+        document.getElementById('sights').innerHTML = 'Big Ben, Buckingham Palace, Westminster Abbey, Windsor Castle, The London Eye';
+    } else if (country === "JP") {
+        document.getElementById('sights').innerHTML = 'Meiji Shrine, Shinjuku Gyoen National Garden, Sensō-ji Temple, Ginza District Shopping Center, Tokyo National Museum';
+    } else if (country === "US") {
+        document.getElementById('sights').innerHTML = 'Statue of Liberty, Central Park, Empire State Building, Metropolitan Museum of Art, Broadway and the Theater District';
+    } else if (country === "TH") {
+        document.getElementById('sights').innerHTML = 'Wat Arun, Grand Palace, Chao Phraya River, Lumphini Park, Sea Life Bangkok Ocean World';
+    } else if (country === "KR") {
+        document.getElementById('sights').innerHTML = 'Hongdae Nightlife, N Seoul Tower, Lotte World, Indoor Amusement Park, Gyeongbokgung Palace, The Seoul Museum of Art';
+    }
+}
+
+sightseeing();
