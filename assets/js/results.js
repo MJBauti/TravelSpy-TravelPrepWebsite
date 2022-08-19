@@ -1,15 +1,11 @@
-var country
+var country = localStorage.getItem("country");
 var city
 
 function getParams() {
     var searchParamsArr = document.location.search.split(',');
     console.log(searchParamsArr);
 
-     city = searchParamsArr[0].split('=').pop();
-     country = searchParamsArr[1].split('0').pop();
-
     city = searchParamsArr[0].split('=').pop();
-    country = searchParamsArr[1].split('0').pop();
 
     getFlag(country);
 } 
@@ -141,8 +137,7 @@ function currencyExchange() {
 }
   
 // Timezone API with query parameter
-Function to add Country and City to the end of the URL Query Parameter
-function timezoneCountry {
+function timezoneCountry() {
 fetch(`https://api.ipgeolocation.io/timezone?apiKey=a21635ac9e344810af39538fb33ac767&${latlong}`)
   .then(response => response.json())
   .then(result => console.log(result))
