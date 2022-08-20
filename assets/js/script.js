@@ -95,11 +95,13 @@ var getFranceInfo = function() {
         currency = "EUR";
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
-        latlong = "lat=48.8566&long=2.3522";
+        var lat = "48.8566";
+        var lon = "2.3522";
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
-        localStorage.setItem("latlong", latlong);
+        localStorage.setItem("lat", lat);
+        localStorage.setItem("lon", lon);
     })
 }
 
@@ -113,11 +115,13 @@ var getUnitedKingdomInfo = function() {
         currency = "GBP";
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
-        latlong = "lat=51.5072&long=0.1276";
+        var lat = "51.5072";
+        var lon = "0.1276";
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
-        localStorage.setItem("latlong", latlong);
+        localStorage.setItem("lat", lat);
+        localStorage.setItem("lon", lon);
     })
 }
 
@@ -131,11 +135,13 @@ var getJapanInfo = function() {
         currency = "JPY";
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
-        latlong = "lat=35.6762&long=139.6503";
+        var lat = "35.6762";
+        var lon = "139.6503"
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
-        localStorage.setItem("latlong", latlong);
+        localStorage.setItem("lat", lat);
+        localStorage.setItem("lon", lon);
     })
 }
 
@@ -149,11 +155,13 @@ var getUSAInfo = function() {
         currency = "USD";
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
-        latlong = "lat=40.7128&long=-74.0060";
+        var lat = "40.7128";
+        var lon = "-74.0060";
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
-        localStorage.setItem("latlong", latlong);
+        localStorage.setItem("lat", lat);
+        localStorage.setItem("lon", lon);
     })
 }
 
@@ -167,11 +175,13 @@ var getThailandInfo = function() {
         currency = "THB";
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
-        latlong = "lat=13.7563&long=100.5018";
+        var lat = "13.7563";
+        var lon = "100.5018";
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
-        localStorage.setItem("latlong", latlong);
+        localStorage.setItem("lat", lat);
+        localStorage.setItem("lon", lon);
     })
 }
 
@@ -185,11 +195,13 @@ var getKoreaInfo = function() {
         currency = "KRW";
         countryCode2 = (data[1].cca2);
         timezone = (data[1].timezones[0]);
-        latlong = "lat=37.5665&long=126.9780";
+        var lat = "37.5665";
+        var lon = "126.9780";
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
-        localStorage.setItem("latlong", latlong);
+        localStorage.setItem("lat", lat);
+        localStorage.setItem("lon", lon);
     })
 }
 

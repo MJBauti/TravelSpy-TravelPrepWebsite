@@ -1,6 +1,8 @@
 var country = localStorage.getItem("country");
 var backBtn = document.querySelector('#back-btn');
 var currency = localStorage.getItem("currency");
+var lat = localStorage.getItem("lat");
+var lon = localStorage.getItem("lon");
 var city
 
 function getParams() {
@@ -145,7 +147,7 @@ function currencyExchange() {
   
 // Timezone API with query parameter
 function timezoneCountry() {
-fetch(`https://api.ipgeolocation.io/timezone?apiKey=a21635ac9e344810af39538fb33ac767&${latlong}`)
+fetch(`https://api.ipgeolocation.io/timezone?apiKey=a21635ac9e344810af39538fb33ac767&lat=${lat}&long=${lon}`)
   .then(response => response.json())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
