@@ -149,7 +149,10 @@ function currencyExchange() {
 function timezoneCountry() {
 fetch(`https://api.ipgeolocation.io/timezone?apiKey=a21635ac9e344810af39538fb33ac767&lat=${lat}&long=${lon}`)
   .then(response => response.json())
-  .then(result => console.log(result))
+  .then(data => {
+    var tzDateTime = data.date_time;
+    document.getElementById('tzDisp').textContent = `The current date and time is ${tzDateTime}.`;
+    })
   .catch(error => console.log('error', error));
 }
 
