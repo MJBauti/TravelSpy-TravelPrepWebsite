@@ -10,7 +10,7 @@
 </head>
 
 
-<body class="flex, pt-4, text-center bg-slate-800">
+<body class="h-screen pt-4, text-center bg-slate-800">
     <div class="w-full h-screen bg-no-repeat bg-cover bg-fixed scale-100" style="background-image: url('https://cdn.pixabay.com/photo/2013/06/20/13/52/world-140304_960_720.jpg');">
         <header>
             <div class="bg-gradient-to-r from-purple-700 to-black text-white text-9xl pb-8 font-bold">
@@ -22,49 +22,25 @@
                 <button id="back-btn" href="./index.html" class="btn text-xl bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">← Go Back</button>
             </nav>
         </header>
-        <main>
+        <main id="results">
             <div>
-
                 <div id="city-card" class="info-card w-auto ml-5 mt-8 mr-5 bg-slate-800 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 text-white">
-                    <div class="font-bold text-xl mt-5 text-center p-3 text-white">Mission Details</div>
-                    <p class="px-6 font-medium text-gray-500 dark:text-gray-400 py-4 text-base text-center">Here's What Our Spies Retrieved For:</p>
-                    <h2 id="city-choice" class="font-bold"></h2>
+                    <h2 class="font-bold text-xl mt-5 text-center p-3 text-white">Mission Details For:</h2>
+                    <h2 id="city-choice" class="font-bold text-xl mt-5 text-center p-3 text-white"></h2>
                 </div>
 
                 <div id="country-card" class="info-card w-auto ml-5 mt-8 mr-5 bg-slate-800 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 text-white px-6 pt-4 pb-2">
+                    <p class="px-6 font-medium text-gray-500 dark:text-gray-400 py-4 text-base text-center">Here's What Our Spies Retrieved</p>
                     <!-- Flag Return -->
                     <span class="mt-5 inline-block bg-gradient-to-r from-cyan-600 to-blue-600 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">Country Flag</span>
                     <img src="" id="flag" alt="country flag"/>
                     <!-- Currency Return -->
                     <span class="mt-5 inline-block bg-gradient-to-r from-cyan-600 to-blue-600 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">Currency</span>
-                    <p id="currencyInfo" class="font-bold text-xl">api return 2</p>
+                    <p id="currencyInfo" class="font-bold text-xl"></p>
                     <!-- Timezone Return -->
                     <span class="mt-5 inline-block bg-gradient-to-r from-cyan-600 to-blue-600 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">Timezone</span>
-                    <p id="tzDisp" class="font-bold text-xl">api return 3</p>
-
-                <!-- Big Info Card -->
-                <div class="w-auto ml-5 mt-8 mr-5 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 text-white ">
-        
-                    <div class="px-6 font-medium text-gray-500 dark:text-gray-400 py-4">
-                        <div class="font-bold text-xl mt-5 text-center p-3 text-white">Mission Details</div>
-                        <p class="text-base text-center">Here's What Our Spies Retrieved:</p>
-                    </div>
-                    <div class="px-6 pt-4 pb-2">
-                        <!-- Flag Return -->
-                        <span class="mt-5 inline-block bg-gradient-to-r from-cyan-600 to-blue-600 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 content-center align-middle">Country Flag</span>
-                            <img class="float scale-100 content-center align-middle" src="" id="flag"/>
-                        <!-- Currency Return -->
-                        <span class="mt-5 inline-block bg-gradient-to-r from-cyan-600 to-blue-600 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">Currency</span>
-                            <p id="currencyInfo" class="font-bold text-xl"></p>
-                        <!-- Timezone Return -->
-                        <span class="mt-5 inline-block bg-gradient-to-r from-cyan-600 to-blue-600 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">Timezone</span>
-                            <p id="realTZ" class ="font-bold text-xl"></p>
-                            <p id="tzDisp" class="font-bold text-xl"></p>
-                            <!-- Points of Interest -->
-                        <span class="mt-5 inline-block bg-gradient-to-r from-cyan-600 to-blue-600 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">Points of Interest</span>
-                            <p id="sights" class="font-bold text-xl"></p>
-                    </div>
-
+                    <p id="realTZ" class="font-bold text-xl"></p>
+                    <p id="tzDisp" class="font-bold text-xl"></p>
                 </div>
             </div>
 
@@ -73,13 +49,14 @@
                 <span class="mt-5 inline-block bg-gradient-to-r from-cyan-600 to-blue-600 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2">Sightseeing Options</span>
                 <p id="sights" class="font-bold text-xl"></p>
             </div>
-        </main>          
+        </main>
+        <footer class="h-20 text-2xl text-black text-center bg-gradient-to-r from-cyan-500 to-blue-500">Made with❤️and Tailwindcss
+            <h2>Created By: Michael, Gassan, & Andrew</h2>
+        </footer>          
     </div>
     <script src="./assets/js/results.js"></script>
 </body>
 
-<footer class="h-20 text-2xl text-black text-center bg-gradient-to-r from-cyan-500 to-blue-500">Made with❤️and Tailwindcss
-    <h2>Created By: Michael, Gassan, & Andrew</h2>
-</footer>
+
 
 </html>

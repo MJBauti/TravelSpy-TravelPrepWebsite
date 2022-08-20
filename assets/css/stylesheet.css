@@ -24,8 +24,8 @@
     width: 50%;
 }
 
-main {
-    display:flex;
+#results {
+    display: flex;
     justify-content: center;
 }
 
@@ -33,14 +33,15 @@ main {
     min-width: 100px;
 }
 
-.city-card{
+#city-card{
     min-height: 100px;
 }
 
-.country-card{
+#country-card{
     min-height: 200px;
 }
 
-.tourism-card{
+#tourism-card{
     min-height: 300px;
+    min-width: 500px;
 }
