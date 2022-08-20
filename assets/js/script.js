@@ -6,6 +6,8 @@ var newyorkBtn = document.querySelector('#newyork-usa');
 var bangkokBtn = document.querySelector('#bangkok-thailand');
 var seoulBtn = document.querySelector('#seoul-southkorea');
 var deploySpyBtn = document.querySelector('#deploy');
+var closeMdl = document.querySelector('#close-modal');
+var cityInputVal;
 var currency;
 var countryCode2;
 var timezone;
@@ -13,43 +15,64 @@ var queryString;
 
 
 function chooseParis(event) {
-    var cityInputVal = "Paris";
+    cityInputVal = "Paris";
     queryString = './results.html?q=' + cityInputVal;
     getFranceInfo();
+    deployModal();
+    document.getElementById('city-choice').textContent = "Paris, France";
 }
 
 function chooseLondon(event) {
-    var cityInputVal = "London";
+    cityInputVal = "London";
     queryString = './results.html?q=' + cityInputVal;
     getUnitedKingdomInfo();
+    deployModal();
+    document.getElementById('city-choice').textContent = "London, United Kingdom";
 }
 
 function chooseTokyo(event) {
-    var cityInputVal = "Tokyo";
+    cityInputVal = "Tokyo";
     queryString = './results.html?q=' + cityInputVal;
     getJapanInfo();
+    deployModal();
+    document.getElementById('city-choice').textContent = "Tokyo, Japan";
 }
 
 function chooseNewYork(event) {
-    var cityInputVal = "New York";
+    cityInputVal = "New York";
     queryString = './results.html?q=' + cityInputVal;
     getUSAInfo();
+    deployModal();
+    document.getElementById('city-choice').textContent = "New York, USA";
 }
 
 function chooseBangkok(event) {
-    var cityInputVal = "Bangkok";
+    cityInputVal = "Bangkok";
     queryString = './results.html?q=' + cityInputVal;
     getThailandInfo();
+    deployModal();
+    document.getElementById('city-choice').textContent = "Bangkok, Thailand";
 }
 
 function chooseSeoul(event) {
-    var cityInputVal = "Seoul";
+    cityInputVal = "Seoul";
     queryString = './results.html?q=' + cityInputVal;
     getKoreaInfo();
+    deployModal();
+    document.getElementById('city-choice').textContent = "Seoul, Souh Korea";
 }
 
 function deploySpy(event) {
     location.assign(queryString);
+}
+
+function deployModal() {
+    document.getElementById('myModal').style.display = "block";
+    closeMdl.addEventListener('click', closeModal);
+}
+
+function closeModal() {
+    document.getElementById("myModal").style.display = "none";
 }
 
 deploySpyBtn.addEventListener('click', deploySpy);
