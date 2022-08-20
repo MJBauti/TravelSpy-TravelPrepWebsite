@@ -5,13 +5,14 @@ var lat = localStorage.getItem("lat");
 var lon = localStorage.getItem("lon");
 var city
 
-function getParams() {
+// Takes from URL keywords
+function getParams() { 
     var searchParamsArr = document.location.search.split(',');
     city = searchParamsArr[0].split('=').pop();
-    
 } 
 getParams();
 
+// Country flag API
 function getFlag (country) {
     fetch (`https://countryflagsapi.com/png/${country}`, {cache: `reload`,})
     .then(response => {
@@ -22,16 +23,16 @@ function getFlag (country) {
     })
 }
 
+// Button to go back to Index.HTML
 function goBack(event) {
     location.assign('./index.html');
 }
+backBtn.addEventListener('click', goBack); // Event listener to go back to Index.HTML
 
-backBtn.addEventListener('click', goBack);
 
+// WIP: Hotel API
 var hotelsUrl = 'https://hotels4.p.rapidapi.com/locations/v2/search?query=';
 var hotelKey = '069917c6d4msh28e5523d08eaa97p1412bdjsn5f7635020738';
-
-
 function getHotels(city, country) {
     var apiUrl = hotelsUrl + (city) + '&appid=' + hotelKey;
     fetch(apiUrl)
@@ -73,7 +74,7 @@ function getHotels(city, country) {
                                     sixHotel.append(cardDiv);
                                     cardDiv.append(cardBodyDiv);
                                 
-                                    
+                                   
                                 }
                             })
                             }
@@ -88,7 +89,7 @@ function getHotels(city, country) {
             alert('Unable to connect to Hotels');
         });
 }
-
+// WIP: Hotel API 2
 function findHotels() {
     var requestHotels = {
         method:'GET',
@@ -106,7 +107,7 @@ function findHotels() {
 	.catch(err => console.error(err));
 };
 
-
+// WIP: Flights API
 function flights() {
     
     var requestFlights = {
@@ -123,8 +124,6 @@ function flights() {
 	.catch(error => console.error('error', error));
 }
 
-
-
 // Currency Exchange API fetch. Returns data in JSON format
 function currencyExchange() {
     var myHeaders = new Headers();
@@ -135,12 +134,11 @@ function currencyExchange() {
       redirect: 'follow',
       headers: myHeaders
     };
-    // Need a function to change the "EUR" in the url to corresponding country
     fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${currency}&from=usd&amount=1`, requestOptions)
       .then(response => response.json())
       .then(data => {
         var currencyRes = data.result
-        document.getElementById('currencyInfo').textContent = `The current exchange rate for 1 USD is ${currencyRes} ${currency}`;
+        document.getElementById('currencyInfo').textContent = `The current exchange rate for 1 USD is ${currencyRes} ${currency}.`;
         })
       .catch(error => console.log('error', error));
 }
@@ -151,37 +149,52 @@ fetch(`https://api.ipgeolocation.io/timezone?apiKey=a21635ac9e344810af39538fb33a
   .then(response => response.json())
   .then(data => {
     var tzDateTime = data.date_time;
-    document.getElementById('tzDisp').textContent = `The current date and time is ${tzDateTime}.`;
+    var realTz = localStorage.getItem("timezone")
+    document.getElementById('realTZ').textContent = `${realTz}`;
+    document.getElementById('tzDisp').textContent = `The current date and time is ${tzDateTime}`;
     })
   .catch(error => console.log('error', error));
 }
 
 // Famous Sightseeing places
-
+// Function that changes array based on selected location
 function sightseeing() {
     if (country === "FR") {
-        document.getElementById('sights').innerHTML = 'Eiffel Tower, Musée du Louvre, Musee de l Orangerie, Notre Dame Cathedral, Le Marais';
+      var countryplaces = ['Eiffel Tower', 'Musée du Louvre', 'Musee de l Orangerie', 'Notre Dame Cathedral', 'Le Marais'];
     } else if (country === "GB") {
-        document.getElementById('sights').innerHTML = 'Big Ben, Buckingham Palace, Westminster Abbey, Windsor Castle, The London Eye';
+        var countryplaces = ['Big Ben', 'Buckingham Palace', 'Westminster Abbey', 'Windsor Castle', 'The London Eye'];
     } else if (country === "JP") {
-        document.getElementById('sights').innerHTML = 'Meiji Shrine, Shinjuku Gyoen National Garden, Sensō-ji Temple, Ginza District Shopping Center, Tokyo National Museum';
+        var countryplaces = ['Meiji Shrine', 'Shinjuku Gyoen National Garden', 'Sensō-ji Temple', 'Ginza District Shopping Center', 'Tokyo National Museum'];
     } else if (country === "US") {
-        document.getElementById('sights').innerHTML = 'Statue of Liberty, Central Park, Empire State Building, Metropolitan Museum of Art, Broadway and the Theater District';
+        var countryplaces = ['Statue of Liberty', 'Central Park', 'Empire State Building', 'Metropolitan Museum of Art', 'Broadway and the Theater District'];
     } else if (country === "TH") {
-        document.getElementById('sights').innerHTML = 'Wat Arun, Grand Palace, Chao Phraya River, Lumphini Park, Sea Life Bangkok Ocean World';
+        var countryplaces = ['Wat Arun', 'Grand Palace', 'Chao Phraya River', 'Lumphini Park', 'Sea Life Bangkok Ocean World'];
     } else if (country === "KR") {
-        document.getElementById('sights').innerHTML = 'Hongdae Nightlife, N Seoul Tower, Lotte World, Indoor Amusement Park, Gyeongbokgung Palace, The Seoul Museum of Art';
+        var countryplaces = ['Hongdae Nightlife', 'N Seoul Tower', 'Lotte World', 'Indoor Amusement Park', 'Gyeongbokgung Palace', 'The Seoul Museum of Art'];
     }
+    // Function that forloops list in array into li items
+    function loadSights() {
+        var places = countryplaces;
+        // Get a refrerence to the UL
+        var ul = document.getElementById('sights');
+        for (i = 0; i < places.length; i++) {
+          var li = document.createElement("li"); // create li element.
+          li.innerHTML = places[i]; // assigning text to li using array value.
+          ul.appendChild(li); // append li to ul.
+        }
+      }
+      loadSights();
 }
 
-
 // Run all functions to Display the information
+// Function that runs all the functions
 function displayInfo() {
     document.getElementById('city-choice').textContent = `${city}, ${country}`;
     getFlag(country);
     currencyExchange();
     timezoneCountry();
     sightseeing();
+    timezoneCountry();
 }
-
+// Execute all the functions
 displayInfo();
