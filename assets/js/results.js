@@ -175,11 +175,13 @@ function sightseeing() {
 }
 
 
-
+// Run all functions to Display the information
 function displayInfo() {
-    sightseeing();
-    currencyExchange();
+    document.getElementById('city-choice').textContent = `${city}, ${country}`;
     getFlag(country);
+    currencyExchange();
+    timezoneCountry();
+    sightseeing();
 }
 
 displayInfo();
