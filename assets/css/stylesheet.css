@@ -17,7 +17,7 @@
 }  
 
 .modal-content {
-    background-color: #fefefe;
+    background:linear-gradient(rgb(83, 6, 83),rgb(17, 17, 103));
     margin: 15% auto; 
     padding: 20px;
     border: 2px solid #888;
@@ -44,4 +44,12 @@
 #tourism-card{
     min-height: 300px;
     min-width: 500px;
+}
+
+img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 400px;
+    max-height: 450px;
 }

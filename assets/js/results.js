@@ -161,16 +161,22 @@ fetch(`https://api.ipgeolocation.io/timezone?apiKey=a21635ac9e344810af39538fb33a
 function sightseeing() {
     if (country === "FR") {
       var countryplaces = ['Eiffel Tower', 'Musée du Louvre', 'Musee de l Orangerie', 'Notre Dame Cathedral', 'Le Marais'];
+      var countryimg = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg/1024px-Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg";
     } else if (country === "GB") {
         var countryplaces = ['Big Ben', 'Buckingham Palace', 'Westminster Abbey', 'Windsor Castle', 'The London Eye'];
+        var countryimg = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Clock_Tower_-_Palace_of_Westminster%2C_London_-_May_2007.jpg/500px-Clock_Tower_-_Palace_of_Westminster%2C_London_-_May_2007.jpg";
     } else if (country === "JP") {
         var countryplaces = ['Meiji Shrine', 'Shinjuku Gyoen National Garden', 'Sensō-ji Temple', 'Ginza District Shopping Center', 'Tokyo National Museum'];
+        var countryimg = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Courtyard_of_Meiji_Shrine_20190717.jpg/2560px-Courtyard_of_Meiji_Shrine_20190717.jpg";
     } else if (country === "US") {
         var countryplaces = ['Statue of Liberty', 'Central Park', 'Empire State Building', 'Metropolitan Museum of Art', 'Broadway and the Theater District'];
+        var countryimg = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Lady_Liberty_under_a_blue_sky_%28cropped%29.jpg/800px-Lady_Liberty_under_a_blue_sky_%28cropped%29.jpg";
     } else if (country === "TH") {
         var countryplaces = ['Wat Arun', 'Grand Palace', 'Chao Phraya River', 'Lumphini Park', 'Sea Life Bangkok Ocean World'];
+        var countryimg = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Wat_Arun_Ratchawararam_Ratchawaramahawihan.jpg/2560px-Wat_Arun_Ratchawararam_Ratchawaramahawihan.jpgraram_Ratchawaramahawihan.jpg";
     } else if (country === "KR") {
         var countryplaces = ['Hongdae Nightlife', 'N Seoul Tower', 'Lotte World', 'Indoor Amusement Park', 'Gyeongbokgung Palace', 'The Seoul Museum of Art'];
+        var countryimg = "https://upload.wikimedia.org/wikipedia/commons/e/e9/Hongdae_Party_District_at_Night%2C_Seoul.jpg";
     }
     // Function that forloops list in array into li items
     function loadSights() {
@@ -182,6 +188,7 @@ function sightseeing() {
           li.innerHTML = places[i]; // assigning text to li using array value.
           ul.appendChild(li); // append li to ul.
         }
+        document.getElementById('sightsimage').src = countryimg;
       }
       loadSights();
 }
@@ -189,7 +196,7 @@ function sightseeing() {
 // Run all functions to Display the information
 // Function that runs all the functions
 function displayInfo() {
-    document.getElementById('city-choice').textContent = `${city}, ${country}`;
+    document.getElementById('city-choice').textContent = `${city}, ${country}`; //displays city and country
     getFlag(country);
     currencyExchange();
     timezoneCountry();
