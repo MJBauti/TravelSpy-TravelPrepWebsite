@@ -92,7 +92,7 @@ var getFranceInfo = function() {
     })
     .then(response => {return response.json();})
     .then(data => {
-        currency = (data[0].currencies.EUR.name);
+        currency = "EUR";
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
         latlong = "lat=48.8566&long=2.3522";
@@ -110,7 +110,7 @@ var getUnitedKingdomInfo = function() {
     })
     .then(response => {return response.json();})
     .then(data => {
-        currency = (data[0].currencies.GBP.name);
+        currency = "GBP";
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
         latlong = "lat=51.5072&long=0.1276";
@@ -128,7 +128,7 @@ var getJapanInfo = function() {
     })
     .then(response => {return response.json();})
     .then(data => {
-        currency = (data[0].currencies.JPY.name);
+        currency = "JPY";
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
         latlong = "lat=35.6762&long=139.6503";
@@ -146,7 +146,7 @@ var getUSAInfo = function() {
     })
     .then(response => {return response.json();})
     .then(data => {
-        currency = (data[0].currencies.USD.name);
+        currency = "USD";
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
         latlong = "lat=40.7128&long=-74.0060";
@@ -164,7 +164,7 @@ var getThailandInfo = function() {
     })
     .then(response => {return response.json();})
     .then(data => {
-        currency = (data[0].currencies.THB.name);
+        currency = "THB";
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
         latlong = "lat=13.7563&long=100.5018";
@@ -182,7 +182,7 @@ var getKoreaInfo = function() {
     })
     .then(response => {return response.json();})
     .then(data => {
-        currency = (data[1].currencies.KRW.name);
+        currency = "KRW";
         countryCode2 = (data[1].cca2);
         timezone = (data[1].timezones[0]);
         latlong = "lat=37.5665&long=126.9780";
