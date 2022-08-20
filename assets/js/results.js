@@ -74,7 +74,7 @@ function getHotels(city, country) {
                                     sixHotel.append(cardDiv);
                                     cardDiv.append(cardBodyDiv);
                                 
-                                    
+                                   
                                 }
                             })
                             }
@@ -186,11 +186,14 @@ function sightseeing() {
       loadSights();
 }
 
+// Run all functions to Display the information
 // Function that runs all the functions
 function displayInfo() {
-    sightseeing();
-    currencyExchange();
+    document.getElementById('city-choice').textContent = `${city}, ${country}`;
     getFlag(country);
+    currencyExchange();
+    timezoneCountry();
+    sightseeing();
     timezoneCountry();
 }
 // Execute all the functions
