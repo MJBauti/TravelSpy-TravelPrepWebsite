@@ -1,14 +1,12 @@
 var country = localStorage.getItem("country");
 var backBtn = document.querySelector('#back-btn');
+var currency = localStorage.getItem("currency");
 var city
 
 function getParams() {
     var searchParamsArr = document.location.search.split(',');
-    console.log(searchParamsArr);
-
     city = searchParamsArr[0].split('=').pop();
-
-    getFlag(country);
+    
 } 
 getParams();
 
@@ -138,7 +136,10 @@ function currencyExchange() {
     // Need a function to change the "EUR" in the url to corresponding country
     fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${currency}&from=usd&amount=1`, requestOptions)
       .then(response => response.json())
-      .then(result => console.log(result))
+      .then(data => {
+        var currencyRes = data.result
+        document.getElementById('currencyInfo').textContent = `The current exchange rate for 1 USD is ${currencyRes} ${currency}`;
+        })
       .catch(error => console.log('error', error));
 }
   
@@ -168,4 +169,12 @@ function sightseeing() {
     }
 }
 
-sightseeing();
+
+
+function displayInfo() {
+    sightseeing();
+    currencyExchange();
+    getFlag(country);
+}
+
+displayInfo();
