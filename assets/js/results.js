@@ -149,7 +149,9 @@ fetch(`https://api.ipgeolocation.io/timezone?apiKey=a21635ac9e344810af39538fb33a
   .then(response => response.json())
   .then(data => {
     var tzDateTime = data.date_time;
-    document.getElementById('tzDisp').textContent = `The current date and time is ${tzDateTime}.`;
+    var realTz = localStorage.getItem("timezone")
+    document.getElementById('realTZ').textContent = `${realTz}`;
+    document.getElementById('tzDisp').textContent = `The current date and time is ${tzDateTime}`;
     })
   .catch(error => console.log('error', error));
 }
