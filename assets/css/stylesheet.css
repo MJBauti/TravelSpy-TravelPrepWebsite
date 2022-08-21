@@ -24,6 +24,12 @@
     width: 50%;
 }
 
+#res-nav {
+    display: flex;
+    max-height: 40px;
+    justify-content: space-around;
+}
+
 #results {
     display: flex;
     justify-content: center;
