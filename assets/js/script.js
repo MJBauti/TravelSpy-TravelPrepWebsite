@@ -10,7 +10,7 @@ var currency;
 var countryCode2;
 var timezone;
 var queryString;
-
+// var cityInputVal;
 
 function chooseParis(event) {
     var cityInputVal = "Paris, France";
@@ -49,14 +49,10 @@ function chooseSeoul(event) {
 }
 
 function deploySpy(event) {
-    if (!cityInputVal) {
-        console.error('You need a city input value!');
-        return;
-        // modal.style.display = "block";
-        // span.onclick = function() {modal.style.display = "none";}
-    }
     location.assign(queryString);
 }
+
+
 
 deploySpyBtn.addEventListener('click', deploySpy);
 parisBtn.addEventListener('click', chooseParis);
