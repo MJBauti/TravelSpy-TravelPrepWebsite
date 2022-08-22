@@ -17,35 +17,37 @@
         style="background-image: url('https://cdn.pixabay.com/photo/2013/06/20/13/52/world-140304_960_720.jpg');">
     
         <main>
-            <div class="bg-gradient-to-r from-cyan-600 to-blue-600 text-white text-9xl font-bold">
+            <!-- Header -->
+            <div class="text-transparent text-9xl bg-clip-text bg-gradient-to-r from-yellow-200 to-blue-900">
                 <h1 class="header">TRAVEL SPY</h1>
                 
             </div>
 
-        <!-- Button -->
+        <!-- City Buttons -->
         <div class="m-8 space-x-6 text-3xl justify-evenly">
-            <button id= "paris-france" class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300">
+            <button id= "paris-france" class="mt-5 bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300">
                 Paris, France
             </button>
-            <button id= "london-unitedkingdom" class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300">
+            <button id= "london-unitedkingdom" class="mt-5 bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300">
                 London, United Kingdom
             </button>
-            <button id= "tokyo-japan" class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300">
+            <button id= "tokyo-japan" class="mt-5 bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300">
                 Tokyo, Japan
             </button>
-            <button id= "newyork-usa" class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300">
+            <button id= "newyork-usa" class="mt-5 bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300">
                 New York, USA
             </button>
-            <button id= "bangkok-thailand" class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300">
+            <button id= "bangkok-thailand" class="mt-5 bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300">
                 Bangkok, Thailand
             </button>
-            <button id= "seoul-southkorea" class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300">
+            <button id= "seoul-southkorea" class="mt-5 bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300">
                 Seoul, South Korea
             </button>
         </div>
 
-        <div class="text-white m-10 text-3xl space-y-7 invisible">
-            <div class="checkBox ">
+        <!-- Future Checkboxes to choose what info to lookup -->
+        <div class="text-white m-10 text-3xl space-y-7 hidden">
+            <div class="checkBox">
                 <input id="time" type="checkbox" class="h-5 w-5 rounded-md border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 transition duration-200 mt-1 mr-2 cursor-pointer">
                 <label>Local Time</label>
             </div>
@@ -76,14 +78,25 @@
             <div class="checkBox">
                 <input id="sight" type="checkbox" class="h-5 w-5 rounded-md border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 transition duration-200 mt-1 mr-2 cursor-pointer">
                 <label>Sightseeing</label>
-            </div>              
+            </div>            
         </div>
-            <div>
-                <button id="deploy" class="text-center text-4xl w-96 h-20 float place-content-center bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300">Deploy Spy</button>                   
-            </div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <header class="bg-gradient-to-r from-slate-400 to-slate-700 rounded-md text-white text-3xl font-bold">
+                    <h2>Deploy Spy to:</h2>
+                </header>
+                <br>
                 <div>
-                    <img class="float-left scale-100" src="https://cdn.pixabay.com/photo/2016/03/31/19/12/agent-1294795_960_720.png">
+                    <p id="city-choice" class="text-3xl font-bold text-white"></p>
                 </div>
+                <br>
+                <footer>
+                    <button id="close-modal" class="text-center float place-content-center bg-gradient-to-r from-orange-500 to-cyan-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300">Change Location</button>
+                    <button id="deploy" class="text-center float place-content-center bg-gradient-to-r from-cyan-500 to-orange-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300">Deploy</button>
+                </footer>
+            </div>
+        </div>
+        <img class="invert opacity-25 float-left scale-100" src="https://cdn.pixabay.com/photo/2016/03/31/19/12/agent-1294795_960_720.png">
         </main>
 
         <script src="./assets/js/script.js"></script>

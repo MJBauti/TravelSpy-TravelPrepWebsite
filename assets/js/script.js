@@ -6,6 +6,8 @@ var newyorkBtn = document.querySelector('#newyork-usa');
 var bangkokBtn = document.querySelector('#bangkok-thailand');
 var seoulBtn = document.querySelector('#seoul-southkorea');
 var deploySpyBtn = document.querySelector('#deploy');
+var closeMdl = document.querySelector('#close-modal');
+var cityInputVal;
 var currency;
 var countryCode2;
 var timezone;
@@ -13,46 +15,65 @@ var queryString;
 // var cityInputVal;
 
 function chooseParis(event) {
-    var cityInputVal = "Paris, France";
+    cityInputVal = "Paris";
     queryString = './results.html?q=' + cityInputVal;
     getFranceInfo();
+    deployModal();
+    document.getElementById('city-choice').textContent = "Paris, France";
 }
 
 function chooseLondon(event) {
-    var cityInputVal = "London, United Kingdom";
+    cityInputVal = "London";
     queryString = './results.html?q=' + cityInputVal;
     getUnitedKingdomInfo();
+    deployModal();
+    document.getElementById('city-choice').textContent = "London, United Kingdom";
 }
 
 function chooseTokyo(event) {
-    var cityInputVal = "Tokyo, Japan";
+    cityInputVal = "Tokyo";
     queryString = './results.html?q=' + cityInputVal;
     getJapanInfo();
+    deployModal();
+    document.getElementById('city-choice').textContent = "Tokyo, Japan";
 }
 
 function chooseNewYork(event) {
-    var cityInputVal = "New York, USA";
+    cityInputVal = "New York";
     queryString = './results.html?q=' + cityInputVal;
     getUSAInfo();
+    deployModal();
+    document.getElementById('city-choice').textContent = "New York, USA";
 }
 
 function chooseBangkok(event) {
-    var cityInputVal = "Bangkok, Thailand";
+    cityInputVal = "Bangkok";
     queryString = './results.html?q=' + cityInputVal;
     getThailandInfo();
+    deployModal();
+    document.getElementById('city-choice').textContent = "Bangkok, Thailand";
 }
 
 function chooseSeoul(event) {
-    var cityInputVal = "Seoul, South Korea";
+    cityInputVal = "Seoul";
     queryString = './results.html?q=' + cityInputVal;
     getKoreaInfo();
+    deployModal();
+    document.getElementById('city-choice').textContent = "Seoul, South Korea";
 }
 
 function deploySpy(event) {
     location.assign(queryString);
 }
 
+function deployModal() {
+    document.getElementById('myModal').style.display = "block";
+    closeMdl.addEventListener('click', closeModal);
+}
 
+function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+}
 
 deploySpyBtn.addEventListener('click', deploySpy);
 parisBtn.addEventListener('click', chooseParis);
@@ -71,25 +92,16 @@ var getFranceInfo = function() {
     })
     .then(response => {return response.json();})
     .then(data => {
-        currency = (data[0].currencies.EUR.name);
+        currency = "EUR";
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
-        latlong = "lat=48.8566&long=2.3522";
-    })
-}
-
-var getChinaInfo = function() {
-    fetch (`https://restcountries.com/v3.1/name/china`, {
-        cache: `reload`,
-    })
-    .then(response => {return response.json();})
-    .then(data => {
-        currency = ([2].currencies.CNY.name);
-        countryCode2 = (data[2].cca2);
-        timezone = (data[2].timezones[0]);
+        var lat = "48.8566";
+        var lon = "2.3522";
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
+        localStorage.setItem("lat", lat);
+        localStorage.setItem("lon", lon);
     })
 }
 
@@ -100,13 +112,16 @@ var getUnitedKingdomInfo = function() {
     })
     .then(response => {return response.json();})
     .then(data => {
-        currency = (data[0].currencies.GBP.name);
+        currency = "GBP";
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
-        latlong = "lat=51.5072&long=0.1276";
+        var lat = "51.5072";
+        var lon = "0.1276";
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
+        localStorage.setItem("lat", lat);
+        localStorage.setItem("lon", lon);
     })
 }
 
@@ -117,13 +132,16 @@ var getJapanInfo = function() {
     })
     .then(response => {return response.json();})
     .then(data => {
-        currency = (data[0].currencies.JPY.name);
+        currency = "JPY";
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
-        latlong = "lat=35.6762&long=139.6503";
+        var lat = "35.6762";
+        var lon = "139.6503"
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
+        localStorage.setItem("lat", lat);
+        localStorage.setItem("lon", lon);
     })
 }
 
@@ -134,13 +152,16 @@ var getUSAInfo = function() {
     })
     .then(response => {return response.json();})
     .then(data => {
-        currency = (data[0].currencies.USD.name);
+        currency = "USD";
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
-        latlong = "lat=40.7128&long=-74.0060";
+        var lat = "40.7128";
+        var lon = "-74.0060";
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
+        localStorage.setItem("lat", lat);
+        localStorage.setItem("lon", lon);
     })
 }
 
@@ -151,13 +172,16 @@ var getThailandInfo = function() {
     })
     .then(response => {return response.json();})
     .then(data => {
-        currency = (data[0].currencies.THB.name);
+        currency = "THB";
         countryCode2 = (data[0].cca2);
         timezone = (data[0].timezones[0]);
-        latlong = "lat=13.7563&long=100.5018";
+        var lat = "13.7563";
+        var lon = "100.5018";
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
+        localStorage.setItem("lat", lat);
+        localStorage.setItem("lon", lon);
     })
 }
 
@@ -168,13 +192,16 @@ var getKoreaInfo = function() {
     })
     .then(response => {return response.json();})
     .then(data => {
-        currency = (data[1].currencies.KRW.name);
+        currency = "KRW";
         countryCode2 = (data[1].cca2);
         timezone = (data[1].timezones[0]);
-        latlong = "lat=37.5665&long=126.9780";
+        var lat = "37.5665";
+        var lon = "126.9780";
         localStorage.setItem("currency", currency);
         localStorage.setItem("country", countryCode2);
         localStorage.setItem("timezone", timezone);
+        localStorage.setItem("lat", lat);
+        localStorage.setItem("lon", lon);
     })
 }
 
