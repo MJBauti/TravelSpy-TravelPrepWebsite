@@ -9,6 +9,7 @@ var city
 function getParams() { 
     var searchParamsArr = document.location.search.split(',');
     city = searchParamsArr[0].split('=').pop();
+    console.log(city);
 } 
 getParams();
 
@@ -21,6 +22,15 @@ function getFlag (country) {
     .then(blob => {
         document.getElementById('flag').src = URL.createObjectURL(blob)
     })
+}
+
+function newYorkIssue() {
+    if (city === "New%20York") {
+        city = "New York";
+        document.getElementById('city-choice').textContent = `${city}, ${country}`;
+    } else {
+        document.getElementById('city-choice').textContent = `${city}, ${country}`;
+    }
 }
 
 // Button to go back to Index.HTML
@@ -196,7 +206,7 @@ function sightseeing() {
 // Run all functions to Display the information
 // Function that runs all the functions
 function displayInfo() {
-    document.getElementById('city-choice').textContent = `${city}, ${country}`; //displays city and country
+    newYorkIssue();
     getFlag(country);
     currencyExchange();
     timezoneCountry();
