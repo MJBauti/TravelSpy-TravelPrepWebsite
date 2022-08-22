@@ -175,7 +175,7 @@ function sightseeing() {
         var countryplaces = ['Wat Arun', 'Grand Palace', 'Chao Phraya River', 'Lumphini Park', 'Sea Life Bangkok Ocean World'];
         var countryimg = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Wat_Arun_Ratchawararam_Ratchawaramahawihan.jpg/2560px-Wat_Arun_Ratchawararam_Ratchawaramahawihan.jpgraram_Ratchawaramahawihan.jpg";
     } else if (country === "KR") {
-        var countryplaces = ['Hongdae Nightlife', 'N Seoul Tower', 'Lotte World', 'Indoor Amusement Park', 'Gyeongbokgung Palace', 'The Seoul Museum of Art'];
+        var countryplaces = ['Hongdae Nightlife', 'N Seoul Tower', 'Lotte World - Indoor Amusement Park', 'Gyeongbokgung Palace', 'The Seoul Museum of Art'];
         var countryimg = "https://upload.wikimedia.org/wikipedia/commons/e/e9/Hongdae_Party_District_at_Night%2C_Seoul.jpg";
     }
     // Function that forloops list in array into li items
