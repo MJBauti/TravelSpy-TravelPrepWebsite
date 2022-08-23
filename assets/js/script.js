@@ -59,7 +59,7 @@ function chooseSeoul(event) {
     queryString = './results.html?q=' + cityInputVal;
     getKoreaInfo();
     deployModal();
-    document.getElementById('city-choice').textContent = "Seoul, Souh Korea";
+    document.getElementById('city-choice').textContent = "Seoul, South Korea";
 }
 
 function deploySpy(event) {
