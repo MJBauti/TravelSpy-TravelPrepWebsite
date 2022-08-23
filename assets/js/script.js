@@ -12,7 +12,7 @@ var currency;
 var countryCode2;
 var timezone;
 var queryString;
-
+// var cityInputVal;
 
 function chooseParis(event) {
     cityInputVal = "Paris";

@@ -156,15 +156,15 @@ function getHotels(city, country) {
                                 })
                                 $('#available-hotels').after(sixHotelHeader)
 
-                                var sixHotelArray = [];
-                                for (var i = 0; i < sixHotelArray.length; i++) {
-                                    var cardDiv = $('<div>')
-                                        .addClass('hotel-card');
-                                    var cardBodyDiv = $('<div>')
-                                        .addClass('card-body');
+//                                 var sixHotelArray = [];
+//                                 for (var i = 0; i < sixHotelArray.length; i++) {
+//                                     var cardDiv = $('<div>')
+//                                         .addClass('hotel-card');
+//                                     var cardBodyDiv = $('<div>')
+//                                         .addClass('card-body');
                                     
-                                    sixHotel.append(cardDiv);
-                                    cardDiv.append(cardBodyDiv);
+//                                     sixHotel.append(cardDiv);
+//                                     cardDiv.append(cardBodyDiv);
                                 
                                    
                                 }
@@ -187,12 +187,13 @@ function findHotels() {
         method:'GET',
         redirect: 'follow',
         headers: {
-            'X-RapidAPI-Key': '069917c6d4msh28e5523d08eaa97p1412bdjsn5f7635020738',
+            'X-RapidAPI-Key': '13d42e98fcmsh00e00babacfd5cfp1da579jsnaa9add7eafbe',
             'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'
         }
 
     }
 
+    fetch(`https://hotels4.p.rapidapi.com/locations/v2/search?query=lat=33.44&lon=33.44&${destination}`, {cache: `reload`,}, requestHotels)
     fetch(`https://hotels4.p.rapidapi.com/locations/v2/search?query=lat=${lat}&lon=${lon}`, requestHotels)
 	.then(response => response.json())
 	.then(response => console.log(response))
@@ -206,11 +207,11 @@ function flights() {
         method: 'GET',
         redirect: 'follow',
         headers: {
-            'X-RapidAPI-Key': '069917c6d4msh28e5523d08eaa97p1412bdjsn5f7635020738',
+            'X-RapidAPI-Key': '13d42e98fcmsh00e00babacfd5cfp1da579jsnaa9add7eafbe',
             'X-RapidAPI-Host': 'priceline-com-provider.p.rapidapi.com'}
     }
 
-    fetch(`https://priceline-com-provider.p.rapidapi.com/v1/hotels/search?sort_order=HDR&location_id=3000035821&date_checkout=2022-11-16&date_checkin=2022-11-15&star_rating_ids=3.0%2C3.5%2C4.0%2C4.5%2C5.0&rooms_number=1&amenities_ids=FINTRNT%2CFBRKFST`, requestFlights)
+    fetch(`https://priceline-com-provider.p.rapidapi.com/v1/hotels/search?&sort_order=HDR&location_id=3000035821&date_checkout=2022-11-16&date_checkin=2022-11-15&star_rating_ids=3.0%2C3.5%2C4.0%2C4.5%2C5.0&rooms_number=1&amenities_ids=FINTRNT%2CFBRKFST`, requestFlights)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(error => console.error('error', error));
