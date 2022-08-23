@@ -5,7 +5,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-assignment">Travel Spy</a>
+      <a href="#about-the-project">Travel Spy</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -17,26 +17,27 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#credit">Credit</a></li>
   </ol>
 </details>
 
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Assignment
+## About The Project
 
-![Travel Information Website](/assets/images/screenshot.png "screenshot of Work Day Scheduler")
+![Travel Spy Website](/assets/images/screenshot1.png "initial page of Travel Spy Website") 
 
-A website that allows the user to type notes of their workday
-* User can type in the empty space in each time block.
-* Whatever is typed can be saved onto the Local Storage.
-* Refreshing the page keeps the stored data and displays it in the same time block.
-* Current time and day displayed in the main banner
+A website that allows the user to quickly retrieve data on travel destinations
+* USER STORY: As a traveler, I need a web application that will give me all the information I need to plan my vacation efficiently.
+* Home page displays popular travel destinations.
+* Selected destination will bring you to the page that displays various information such as country flag and currency exchange.
+* Currency exchange and Current time & time zone is live data.
+![Travel Spy Website](/assets/images/screenshot2.png "screenshot of Travel Spy Website Page 2") 
 
-Here is a link to the repo <a href="https://github.com/WhaleAnchor/WorkdayScheduler">github.com/WhaleAnchor/WorkdayScheduler</a>
+Here is a link to the repo <a href="https://github.com/MJBauti/TravelSpy-TravelPrepWebsite">github.com/MJBauti/TravelSpy-TravelPrepWebsite</a>
 
-Here is a link to the deployed URL <a href="https://whaleanchor.github.io/WorkdayScheduler">whaleanchor.github.io/WorkdayScheduler/</a>
+Here is a link to the deployed URL <a href="https://github.com/MJBauti/TravelSpy-TravelPrepWebsite">github.com/MJBauti/TravelSpy-TravelPrepWebsite/</a>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -45,6 +46,7 @@ Here is a link to the deployed URL <a href="https://whaleanchor.github.io/Workda
 ### Built With
 
 <p align ="left">(<a href="https://visualstudio.microsoft.com/">Visual Studio Code</a>)</p>
+<p align ="left">(<a href="https://tailwindcss.com/">Tailwind CSS</a>)</p>
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -57,7 +59,7 @@ Here is a link to the deployed URL <a href="https://whaleanchor.github.io/Workda
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/WhaleAnchor/WorkdayScheduler
+   git clone https://github.com/MJBauti/TravelSpy-TravelPrepWebsite
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -74,11 +76,13 @@ Open the HTML file in a browser (Google Chrome).
 
 
 <!-- CONTACT -->
-## Contact
+## Credit
 
-Andrew Choi - andrewsungwoochoi@gmail.com
+Gassan Bundakji - https://github.com/gbundakji
+Michael Bautista - https://github.com/MJBauti
+Andrew Choi - https://github.com/WhaleAnchor
 
-Project Link: [https://github.com/WhaleAnchor/WorkdayScheduler](https://github.com/WhaleAnchor/WorkdayScheduler)
+Project Link: [hhttps://github.com/MJBauti/TravelSpy-TravelPrepWebsite](https://github.com/MJBauti/TravelSpy-TravelPrepWebsite)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
